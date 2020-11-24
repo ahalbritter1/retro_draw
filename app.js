@@ -105,14 +105,15 @@ function customGridSize() {
     $(".addRows").click(function () {
         let rowsValue = $('.newRows').val()
         for (let i = 0; i <= rowsValue; i++)
-            $('.grid').append(('<div class="cellRow">'))
+            // You don't have to add a class here but you do need to add the click handler for these to work like the other cells
+            $('.grid').append($('<div class="cell">').click(onGridClick))
 
     })
 }
 $(".addColumns").click(function () {
     let columnsValue = $('.newColumns').val()
     for (let i = 0; i <= columnsValue; i++)
-        $('.grid').append(('<div class="cellColumn">'))
+        $('.grid').append($('<div class="cell">').click(onGridClick))
 }
 );
 
